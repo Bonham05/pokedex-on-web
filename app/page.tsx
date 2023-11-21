@@ -75,22 +75,22 @@ export default function Home() {
                   {pokemonData.map((pokemon, i) => {
                     // console.log(pokemon);
                     return (
-                      // <Link
-                      //   key={i}
-                      //   href={{
-                      //     pathname: `/pokemons/${pokemon.id}`,
-                      //     // query: { url: pokemonData.url },
-                      //   }}
-                      // >
+                      <Link
+                        key={i}
+                        href={{
+                          pathname: `/pokemons/${pokemon.id}`,
+                          // query: { url: pokemonData.url },
+                        }}
+                      >
                       <div
                         key={i}
-                        onClick={() => {
+                        onMouseEnter={() => {
                           setSelectedPokemon(`${i + 1}`);
                         }}
                       >
                         <Sidebar key={i} pokemon={pokemon} />
                       </div>
-                      // </Link>
+                       </Link>
                     );
                   })}
                 </div>
