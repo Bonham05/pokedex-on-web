@@ -1,6 +1,7 @@
 // メイン画面に表示するカード、表示テスト用
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 import Link from "next/link";
 import { getEachPokemon, getPokemonSpecies } from "@/app/lib/pokemonData";
@@ -16,7 +17,7 @@ import { getEachPokemon, getPokemonSpecies } from "@/app/lib/pokemonData";
 //   );
 // };
 
-const DummyCard = ({ selectedPokemonId }: any) => {
+const CardOnTopPage = ({ selectedPokemonId }: any) => {
   const [pokemonName, setPokemonName] = useState();
   const [pokemonTypeURL, setPokemonTypeURL] = useState<any>([]);
   const [pokemonSpieciesURL, setPokemonSpieciesURL] = useState("");
@@ -35,7 +36,7 @@ const DummyCard = ({ selectedPokemonId }: any) => {
     // loadPokemonAbility(resPokemonAbility);
   }, [pokemonNameDetail]);
 
-  console.log(pokemonNameDetail);
+  // console.log(pokemonNameDetail);
 
   const loadPokemonName = async (data: any) => {
     let response = await fetch(data);
@@ -104,15 +105,14 @@ const DummyCard = ({ selectedPokemonId }: any) => {
         {/* <Link href={`/pokemons/${pokemon.url}`}> */}
         <div>
           <div>
-            <img
+            <Image
               // ボーダーあり　白背景
               //   className="p-4 bg-white border-solid border-4 rounded-md border-gray-900"
               //   ボーダーなし
-              className="p-4  "
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/transparent/${selectedPokemonId}.png`}
+              alt={`${pokemonName}`}
               height={"250"}
               width={"250"}
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/transparent/${selectedPokemonId}.png`}
-              alt=""
             />
           </div>
         </div>
@@ -164,4 +164,4 @@ const DummyCard = ({ selectedPokemonId }: any) => {
   );
 };
 
-export default DummyCard;
+export default CardOnTopPage;

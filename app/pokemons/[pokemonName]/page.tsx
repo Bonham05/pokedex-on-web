@@ -2,8 +2,9 @@
 // "use client";
 
 import { log } from "console";
+import Image from "next/image";
 import { getEachPokemon, getPokemonSpecies } from "@/app/lib/pokemonData";
-import PokemonDetailCard from "@/app/components/PokemonDetailCard";
+// import PokemonDetailCard from "@/app/components/PokemonDetailCard";
 import { useEffect } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -46,11 +47,11 @@ export default async function pokemonPage({
     return (
       <>
         <main className="text-xl overflow-auto ">
-          <div className=" bg-green-200 w-3/5 min-h-screen mx-auto border-solid border-8 border-gray-900 rounded-md">
+          <div className=" bg-green-200 min-h-screen mx-auto border-solid border-8 border-gray-900 rounded-md md:w-3/5">
             <div className="flex justify-around items-center text-xl ">
               <div className="flex flex-col items-center text-2xl ">
                 {/* 各バージョンのurl対応できるようにする */}
-                <img
+                <Image
                   // ボーダーあり　白背景
                   // className="mt-10 p-3 bg-white border-solid border-4 rounded-md border-gray-900 -scale-x-100"
                   // ボーダーなし
@@ -61,7 +62,7 @@ export default async function pokemonPage({
                     pokemonDetail.sprites.versions["generation-i"].yellow
                       .front_transparent
                   }
-                  alt="${species.names[0].name}"
+                  alt={`${species.names[0].name}`}
                   height={250}
                   width={250}
                 />

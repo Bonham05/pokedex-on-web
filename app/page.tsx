@@ -12,7 +12,7 @@ import {
 import Link from "next/link";
 import { log } from "console";
 import Sidebar from "./components/Sidebar";
-import DummyCard from "./components/DummyCard";
+import CardOnTopPage from "./components/CardOnTopPage";
 
 export default function Home() {
   const [pokemonData, setPokemonData] = useState<PokemonDetailData[]>([]);
@@ -60,10 +60,10 @@ export default function Home() {
         {/* {console.log(pokemonData)} */}
         <main className="">
           {/* ポケモン一覧表示(20匹まで) */}
-          <div className="flex flex-col w-3/5 max-h-screen mx-auto bg-green-200">
+          <div className="flex flex-col  max-h-screen mx-auto bg-green-200 md:w-3/5">
             <Navbar />
           </div>
-          <div className="flex flex-row  w-3/5 max-h-screen mx-auto bg-green-200 p-4">
+          <div className="flex flex-row  max-h-screen mx-auto bg-green-200 p-4 md:w-3/5">
             <div className="flex w-2/4 mx-auto items-start overflow-auto">
               {/* <div className="grid grid-cols-3 items-center justify-center"> */}
               <div className="flex items-center ">
@@ -125,7 +125,7 @@ export default function Home() {
               >
                 <div className="h-3/5 px-5">
                   <div className="border-double border-4 m-4 h-full rounded-md ">
-                    <DummyCard selectedPokemonId={selectedPokemon} />
+                    <CardOnTopPage selectedPokemonId={selectedPokemon} />
                   </div>
                 </div>
               </Link>

@@ -22,10 +22,10 @@ export default function Sidebar({ pokemon }: any) {
 
   return (
     <>
-      <div className="flex">
-        <div className="items-center w-16">{pokemon.id}</div>
+      <div className="flex items-center ">
+        <div className="pl-2 w-16">{pokemon.id}</div>
         <div>
-          <h1 className="p-2">{pokemonName}</h1>
+          <h1 className="p-2">&nbsp;{pokemonName}</h1>
         </div>
       </div>
     </>
