@@ -47,8 +47,10 @@ export default async function pokemonPage({
     return (
       <>
         <main className="text-xl overflow-auto ">
+          {/* 画面上部　ポケモン画像、詳細 */}
           <div className=" bg-green-200 min-h-screen mx-auto border-solid border-8 border-gray-900 rounded-md md:w-3/5">
             <div className="flex justify-around items-center text-xl ">
+              {/* 画面上部左　画像、ナンバー */}
               <div className="flex flex-col items-center text-2xl ">
                 {/* 各バージョンのurl対応できるようにする */}
                 <Image
@@ -75,6 +77,7 @@ export default async function pokemonPage({
                   </div>
                 </div>
               </div>
+              {/* 画面上部右　名前、種類、たかさ、おもさ */}
               <div className="flex flex-col justify-center items-center mr-10 my-5 ">
                 <div className="text-2xl">{species.names[0].name}</div>
                 <div className="m-2 text-lg">{species.genera[0].genus}</div>
@@ -92,24 +95,38 @@ export default async function pokemonPage({
             {/* <div className="w-screen flex justify-center items-center h-1 border-8 border-gray-500"></div> */}
             <hr className="mx-auto bg-black border-8 border-gray-900" />
             <div className="">
+              {/* 画面下部 　フレーバーテキスト、ページ移動ボタン*/}
+              {/* フレーバーテキスト */}
               <div className="p-8 m-5 justify-around items-center text-xl">
                 {species.flavor_text_entries[22].flavor_text}
               </div>
               <div className="p-4 flex flex-col justify-center">
-                <div className="flex flex-row justify-around">
-                  {currentPokeId != 1 && (
+                {/* ページ移動ボタン */}
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  {currentPokeId != 1 ? (
                     <Link href={`/pokemons/${currentPokeId - 1}`}>
-                      <h3>まえへ</h3>
+                      <h3 className="hover:bg-slate-50">まえへ</h3>
                     </Link>
+                  ) : (
+                    <div>
+                    </div>
                   )}
                   <Link href={"/"}>
                     <h3 className="hover:bg-slate-50">もどる</h3>
                   </Link>
-                  {currentPokeId != 151 && (
+                  {currentPokeId != 151 ? (
                     <Link href={`/pokemons/${currentPokeId + 1}`}>
-                      <h3>つぎへ</h3>
+                      <h3 className="hover:bg-slate-50">つぎへ</h3>
                     </Link>
+                  ) : (
+                    <div>
+                    </div>
                   )}
+                  {/* {currentPokeId != 151 && (
+                    <Link href={`/pokemons/${currentPokeId + 1}`}>
+                      <h3 className="hover:bg-slate-50">つぎへ</h3>
+                    </Link>
+                  )} */}
                 </div>
               </div>
             </div>

@@ -65,32 +65,26 @@ export default function Home() {
           </div>
           <div className="flex flex-row  max-h-screen mx-auto bg-green-200 p-4 md:w-3/5">
             <div className="flex w-2/4 mx-auto items-start overflow-auto">
+              <div className="">
               {/* <div className="grid grid-cols-3 items-center justify-center"> */}
-              <div className="flex items-center ">
+                <div className="flex pt-2 pb-4 justify-center w-full">もくじ</div>
+              <div className="flex items-center">
                 {/* <Card pokemon={pokemonData} />
                  */}
-                {/* ページ左　ポケモンのリスト */}
-                <div>
-                  <div className="flex pt-2 pb-4 justify-center">もくじ</div>
+                {/* トップページ左側　ポケモン一覧のリスト */}
+                <div className="h-full">
                   {pokemonData.map((pokemon, i) => {
                     // console.log(pokemon);
                     return (
-                      <Link
-                        key={i}
-                        href={{
-                          pathname: `/pokemons/${pokemon.id}`,
-                          // query: { url: pokemonData.url },
-                        }}
-                      >
                       <div
                         key={i}
                         onMouseEnter={() => {
                           setSelectedPokemon(`${i + 1}`);
                         }}
+                        className="w-full lg:mr-40"
                       >
                         <Sidebar key={i} pokemon={pokemon} />
                       </div>
-                       </Link>
                     );
                   })}
                 </div>
@@ -113,8 +107,9 @@ export default function Home() {
                   })}
                 </div> */}
               </div>
+              </div>
             </div>
-            {/* ページ右部分 */}
+            {/* トップページ右部分 */}
             {/* カード表示 */}
             <div className="w-2/4">
               <Link
