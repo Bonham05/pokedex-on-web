@@ -1,20 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, DotGothic16 } from "next/font/google";
-import localFont from "next/font/local";
-
-const inter = Inter({ subsets: ["latin"] });
-const dotGothic16 = DotGothic16({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const pokeFont = localFont({
-  // src: "./styles/fonts/Arcadepix_Plus.ttf",
-  src: "./styles/fonts/Pokemon_Classic.ttf",
-  // weight: "800",
-  // style: "Regular",
-});
+import { pokeFont } from "./styles/fonts";
 
 export const metadata: Metadata = {
   title: "Pokédex",
