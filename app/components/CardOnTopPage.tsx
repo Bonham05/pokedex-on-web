@@ -1,6 +1,6 @@
 // メイン画面に表示するカード、表示テスト用
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 
 import Link from "next/link";
@@ -127,11 +127,11 @@ const CardOnTopPage = ({ selectedPokemonId }: any) => {
           </div>
           <div className="flex flex-col justify-center">
             {/* <div className=""> */}
-              {/* <h2 className="pt-2 pb-1">タイプ</h2> */}
+            {/* <h2 className="pt-2 pb-1">タイプ</h2> */}
             {/* </div> */}
             {/* <div className="flex flex-row flex-nowrap pt-2"> */}
-              {/* <p>くさ</p> */}
-              {/* {pokemon.types.map((type: any) => {
+            {/* <p>くさ</p> */}
+            {/* {pokemon.types.map((type: any) => {
               {
                 // console.log("タイプ:", pokemon.types);
               }
@@ -155,9 +155,9 @@ const CardOnTopPage = ({ selectedPokemonId }: any) => {
           </div>
         </div>
         {/* <div className="cardData"> */}
-          {/* <p className="pb-1">たかさ : 3m</p> */}
-          {/* <p className="pb-1">おもさ : 33kg</p> */}
-          {/* <p className="title">とくせい:{pokemon.abilities[0].ability.name}</p> */}
+        {/* <p className="pb-1">たかさ : 3m</p> */}
+        {/* <p className="pb-1">おもさ : 33kg</p> */}
+        {/* <p className="title">とくせい:{pokemon.abilities[0].ability.name}</p> */}
         {/* </div> */}
       </div>
     </div>

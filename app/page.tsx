@@ -3,7 +3,7 @@
 "use client";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import {
   fetchAllPokemonData,
   getEachPokemon,
@@ -73,18 +73,21 @@ export default function Home() {
                  */}
                   {/* トップページ左側　ポケモン一覧のリスト */}
                   <div className="h-full w-full">
+
                     {pokemonData.map((pokemon, i) => {
                       // console.log(pokemon);
                       return (
-                        <div
-                          key={i}
-                          onMouseEnter={() => {
-                            setSelectedPokemon(`${i + 1}`);
-                          }}
-                          className=""
-                        >
-                          <Sidebar key={i} pokemon={pokemon} />
-                        </div>
+                        <>
+                          <div
+                            key={i}
+                            onMouseEnter={() => {
+                              setSelectedPokemon(`${i + 1}`);
+                            }}
+                            className=""
+                          >
+                            <Sidebar key={i} pokemon={pokemon} />
+                          </div>
+                        </>
                       );
                     })}
                   </div>
@@ -119,8 +122,10 @@ export default function Home() {
                 }}
               >
                 <div className="h-3/5 px-5">
-                  <div className="border-double border-4 m-4 h-full rounded-md ">
+                  <div className="m-4 h-full rounded-md ">
+
                     <CardOnTopPage selectedPokemonId={selectedPokemon} />
+
                   </div>
                 </div>
               </Link>
@@ -141,9 +146,9 @@ export default function Home() {
           <div className="mx-auto p-8 text-lg">
             <p className="">Page Nation</p>
           </div> */}
-          </div>
-        </main>
-      </div>
+          </div >
+        </main >
+      </div >
     </>
   );
 }
