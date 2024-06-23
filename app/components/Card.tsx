@@ -1,20 +1,9 @@
-//一覧に表示するカード
+//カードをアイコンで一覧表示するファイル
 // "use client";
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import { getEachPokemon, getPokemonSpecies } from "@/app/lib/pokemonData";
-
-// const Card = ({ pokemon }: any) => {
-//   return (
-//     <div className="m-5 transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-//       <div>image </div>
-//       <div>
-//         <h1>{pokemon.name}</h1>
-//       </div>
-//     </div>
-//   );
-// };
 
 const Card = ({ pokemon }: any) => {
   // console.log(pokemon);

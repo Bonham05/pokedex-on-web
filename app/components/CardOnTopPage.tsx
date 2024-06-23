@@ -3,20 +3,6 @@
 import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 
-import Link from "next/link";
-import { getEachPokemon, getPokemonSpecies } from "@/app/lib/pokemonData";
-
-// const Card = ({ pokemon }: any) => {
-//   return (
-//     <div className="m-5 transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-//       <div>image </div>
-//       <div>
-//         <h1>{pokemon.name}</h1>
-//       </div>
-//     </div>
-//   );
-// };
-
 const CardOnTopPage = ({ selectedPokemonId }: any) => {
   const [pokemonName, setPokemonName] = useState();
   const [pokemonTypeURL, setPokemonTypeURL] = useState<any>([]);

@@ -1,23 +1,16 @@
 //個別のポケモン詳細ページ
 // "use client";
 
-import { log } from "console";
 import Image from "next/image";
 import { getEachPokemon, getPokemonSpecies } from "@/app/lib/pokemonData";
-// import PokemonDetailCard from "@/app/components/PokemonDetailCard";
-import { useEffect } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
 export default async function pokemonPage({
   params,
-}: //   serchParams,
-  {
-    params: { pokemonName: string };
-    //   serchParams: { url: string };
-  }) {
-  //   console.log(params.pokemonName);
-
+}: {
+  params: { pokemonName: string };
+}) {
   const pokemonDetail = await getEachPokemon(
     `https://pokeapi.co/api/v2/pokemon/${params.pokemonName}`
   );
@@ -25,22 +18,6 @@ export default async function pokemonPage({
   const species = await getPokemonSpecies(
     `https://pokeapi.co/api/v2/pokemon-species/${params.pokemonName}/`
   );
-  // console.log(species.name);
-
-  //   useEffect(() => {
-  //     const getPokemon = async () => {
-  //       await getEachPokemon(
-  //         `https://pokeapi.co/api/v2/pokemon/${params.pokemonName}`
-  //       );
-  //     };
-  //     const getSpecies = async () => {
-  //       await getPokemonSpecies(
-  //         `https://pokeapi.co/api/v2/pokemon-species/${params.pokemonName}/`
-  //       );
-  //     };
-  //     const pokemonDetail = getPokemon();
-  //     const species = getSpecies();
-  //   }, []);
 
   let currentPokeId = Number(params.pokemonName);
   if (currentPokeId <= 151) {
@@ -59,8 +36,6 @@ export default async function pokemonPage({
                   // ボーダーなし
                   className="mt-10 p-3 border-gray-900 -scale-x-100"
                   src={
-                    // pokemonDetail.sprites.versions["generation-i"].yellow
-                    //   .front_default
                     pokemonDetail.sprites.versions["generation-i"].yellow
                       .front_transparent
                   }
@@ -80,11 +55,17 @@ export default async function pokemonPage({
               {/* 画面上部右　名前、種類、たかさ、おもさ */}
               <div className="justify-center items-center w-7/12 h-full lg:text-2xl">
                 <div className="grid grid-rows-4 ">
-                  <div className="flex p-4 justify-center items-center">{species.names[0].name}</div>
-                  <div className="flex m-2 justify-center items-center">{species.genera[0].genus}</div>
+                  <div className="flex p-4 justify-center items-center">
+                    {species.names[0].name}
+                  </div>
+                  <div className="flex m-2 justify-center items-center">
+                    {species.genera[0].genus}
+                  </div>
                   <div>
                     <div className=" flex justify-center items-center">
-                      <div className="p-3"><h3>たかさ</h3> </div>
+                      <div className="p-3">
+                        <h3>たかさ</h3>{" "}
+                      </div>
                       <div className="p-2">{pokemonDetail.height / 10}</div>
                       <div>m</div>
                     </div>
@@ -115,8 +96,7 @@ export default async function pokemonPage({
                       <h3 className="hover:bg-slate-50">まえへ</h3>
                     </Link>
                   ) : (
-                    <div>
-                    </div>
+                    <div></div>
                   )}
                   <Link href={"/"}>
                     <h3 className="hover:bg-slate-50">もどる</h3>
@@ -126,14 +106,8 @@ export default async function pokemonPage({
                       <h3 className="hover:bg-slate-50">つぎへ</h3>
                     </Link>
                   ) : (
-                    <div>
-                    </div>
+                    <div></div>
                   )}
-                  {/* {currentPokeId != 151 && (
-                    <Link href={`/pokemons/${currentPokeId + 1}`}>
-                      <h3 className="hover:bg-slate-50">つぎへ</h3>
-                    </Link>
-                  )} */}
                 </div>
               </div>
             </div>

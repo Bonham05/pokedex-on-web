@@ -13,8 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="leading-4 box-border">
-      {/* <body className={dotGothic16.className}>{children}</body> */}
+    <html lang="ja" className="leading-4 box-border">
       <body className={`${pokeFont.className} bg-black`}>{children}</body>
     </html>
   );

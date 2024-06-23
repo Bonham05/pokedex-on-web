@@ -17,14 +17,3 @@ export const getPokemonSpecies = async (url: string) => {
   const res = await fetch(url);
   return res.json();
 };
-
-// export const loadPokemon = async (data: ToPokemonsJsonData[]) => {
-//   let _pokemonData = await Promise.all(
-//     data.map((pokemon) => {
-//       // console.log(pokemon);
-//       let pokemonRecord = getEachPokemon(pokemon.url);
-//       return pokemonRecord;
-//     })
-//   );
-//   // setPokemonData(_pokemonData);
-// };
