@@ -108,7 +108,7 @@ const CardOnTopPage = ({ selectedPokemonId }: any) => {
               No.{`${selectedPokemonId}`}:
             </div>
             <div>
-              <h3 className="py-1 text-sm md:text-lg lg:text-xl">
+              <h3 className="py-1 text-sm md:text-xl lg:text-xl">
                 {pokemonName}
               </h3>
             </div>

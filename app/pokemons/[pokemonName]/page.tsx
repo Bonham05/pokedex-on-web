@@ -29,7 +29,6 @@ export default async function pokemonPage({
             <div className="flex h-1/2 justify-around items-center text-xl ">
               {/* 画面上部左　画像、ナンバー */}
               <div className="flex flex-col items-center text-2xl w-5/12">
-                {/* 各バージョンのurl対応できるようにする */}
                 <Image
                   // ボーダーあり　白背景
                   // className="mt-10 p-3 bg-white border-solid border-4 rounded-md border-gray-900 -scale-x-100"
@@ -48,7 +47,7 @@ export default async function pokemonPage({
                     <p>No.</p>
                   </div>
                   <div>
-                    <p className="p-2 text-4xl">{species.id}</p>
+                    <p className="p-2 text-2xl">{species.id}</p>
                   </div>
                 </div>
               </div>
