@@ -102,13 +102,15 @@ const CardOnTopPage = ({ selectedPokemonId }: any) => {
             />
           </div>
         </div>
-        <div className="flex flex-col items-center m-3 whitespace-nowrap">
+        <div className="flex flex-col items-center m-3 whitespace-nowrap ">
           <div className="flex flex-row items-center">
-            <div className="pr-2 font-semibold">
+            <div className="pr-2 font-semibold text-xs md:text-lg">
               No.{`${selectedPokemonId}`}:
             </div>
             <div>
-              <h3 className="cardName py-1 text-lg">{pokemonName}</h3>
+              <h3 className="py-1 text-sm md:text-lg lg:text-xl">
+                {pokemonName}
+              </h3>
             </div>
           </div>
           <div className="flex flex-col justify-center">

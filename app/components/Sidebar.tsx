@@ -1,12 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import localFont from "next/font/local";
+import { pokeFontStrict } from "../styles/fonts";
 
 export default function Sidebar({ pokemon }: any) {
   const [pokemonName, setPokemonName] = useState([]);
 
   useEffect(() => {
     loadPokemonName(pokemonNameDetail);
+    // loadPokemonAbility(resPokemonAbility);
   }, []);
 
   let pokemonNameDetail = pokemon.species.url;
@@ -24,6 +27,7 @@ export default function Sidebar({ pokemon }: any) {
     <>
       <div className="flex text-xs items-center w-full sm:text-base">
         <div className="monster-ball">
+          {/* モンスターボールアイコン */}
           <p>@</p>
         </div>
         <div className="pl-2 w-16">{pokemon.id}</div>
@@ -31,6 +35,7 @@ export default function Sidebar({ pokemon }: any) {
           <Link
             href={{
               pathname: `/pokemons/${pokemon.id}`,
+              // query: { url: pokemonData.url },
             }}
           >
             <h1 className="p-2">&nbsp;{pokemonName}</h1>
