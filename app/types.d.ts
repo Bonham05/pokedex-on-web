@@ -23,3 +23,23 @@ type PokemonDetailData = {
   types: [];
   weight: number;
 };
+
+type InitialData = {
+  count: number;
+  next: string;
+  previous: null;
+  results: PokeName[];
+};
+
+type PokeName = {
+  name: string;
+  url: string;
+};
+
+type JaHrktPokeData = {
+  jaName: string;
+  jaGenus: string;
+  jaFlavor_text: string;
+  id: string;
+  imageSourceURL: string;
+};

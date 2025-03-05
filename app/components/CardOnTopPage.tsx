@@ -152,4 +152,4 @@ const CardOnTopPage = ({ selectedPokemonId }: any) => {
   );
 };
 
-export default CardOnTopPage;
+// export default CardOnTopPage;

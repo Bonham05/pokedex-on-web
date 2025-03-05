@@ -1,27 +1,28 @@
 import React from "react";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { pokeFontStrict } from "../styles/fonts";
 
 export default function Sidebar({ pokemon }: any) {
-  const [pokemonName, setPokemonName] = useState([]);
+  // const [pokemonName, setPokemonName] = useState([]);
+  const pokemonName = "";
 
-  useEffect(() => {
-    loadPokemonName(pokemonNameDetail);
-    // loadPokemonAbility(resPokemonAbility);
-  }, []);
+  // useEffect(() => {
+  //   loadPokemonName(pokemonNameDetail);
+  //   // loadPokemonAbility(resPokemonAbility);
+  // }, []);
 
   let pokemonNameDetail = pokemon.species.url;
 
-  const loadPokemonName = async (data: any) => {
-    let response = await fetch(data);
-    let result = await response.json();
-    let jaName = result.names.find(
-      (name: any) => name.language.name === "ja"
-    ).name;
-    setPokemonName(jaName);
-  };
+  // const loadPokemonName = async (data: any) => {
+  //   let response = await fetch(data);
+  //   let result = await response.json();
+  //   let jaName = result.names.find(
+  //     (name: any) => name.language.name === "ja"
+  //   ).name;
+  //   setPokemonName(jaName);
+  // };
 
   return (
     <>
